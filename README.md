@@ -37,13 +37,21 @@
 ## הקמת Firebase (כ-5 דקות, חינמי)
 
 1. היכנסו ל-<https://console.firebase.google.com> וצרו פרויקט חדש.
-2. בתפריט **Build → Realtime Database** → "Create Database". בחרו אזור (למשל
-   `europe-west1`) והתחילו ב-**test mode** (נחליף כללים בהמשך).
-3. בהגדרות הפרויקט (גלגל השיניים → Project settings → General), תחת
+2. **יצירת מסד הנתונים:** בשורת החיפוש למעלה הקלידו `Realtime Database` (או:
+   בתפריט השמאלי → **Databases & Storage** → **Realtime Database**). שימו לב —
+   **Realtime Database**, לא Firestore. לחצו **Create Database**, בחרו אזור
+   (למשל `europe-west1`) והתחילו ב-**test mode** (נחליף כללים בהמשך).
+   > הערה: בקונסולה החדשה אין יותר תפריט "Build" — הכל מסודר לפי קטגוריות.
+3. בטאב **Data** של המסד, בראש הטבלה, מופיעה כתובת כמו
+   `https://<פרויקט>-default-rtdb.europe-west1.firebasedatabase.app/` — זה
+   ה-`databaseURL`. העתיקו אותה.
+4. בהגדרות הפרויקט (גלגל השיניים → Project settings → General), תחת
    **Your apps**, הוסיפו אפליקציית **Web** (אייקון `</>`). העתיקו את אובייקט
    `firebaseConfig`.
-4. הדביקו אותו ל-`js/config.js` (שדות `apiKey` ו-`databaseURL` הם ההכרחיים).
-   ברגע שהם מלאים, האתר עובר אוטומטית לעבוד מול Firebase.
+5. הדביקו אותו ל-`js/config.js` (שדות `apiKey` ו-`databaseURL` הם ההכרחיים).
+   ודאו ש-`databaseURL` זהה לכתובת משלב 3 — לפעמים היא חסרה ב-config שנוצר
+   אוטומטית וצריך להוסיף ידנית. ברגע שהשדות מלאים, האתר עובר אוטומטית לעבוד
+   מול Firebase.
 
 ### כללי אבטחה מומלצים ל-Database
 
