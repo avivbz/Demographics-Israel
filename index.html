@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>כפר של 100 — תלמיד/ה</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="banner">אם ישראל הייתה כפר של 100 א.נשים</div>
+    <div id="demoFlag" class="demo-flag hidden">מצב הדגמה מקומי — לא מחובר ל-Firebase. הסנכרון עובד רק בין כרטיסיות באותו דפדפן.</div>
+
+    <!-- מסך הצטרפות -->
+    <section id="joinView" class="card center">
+      <h2>הצטרפות לשיעור</h2>
+      <p class="muted">הקלידו את קוד החדר שהמורה מציג/ה על הלוח.</p>
+      <div class="btn-row" style="justify-content:center; margin-top:10px;">
+        <input id="codeInput" class="code-input" type="text" maxlength="6" inputmode="latin"
+               autocomplete="off" autocapitalize="characters" placeholder="ABCD" aria-label="קוד חדר">
+      </div>
+      <div class="btn-row" style="justify-content:center; margin-top:14px;">
+        <button id="joinBtn" class="btn-primary">הצטרפות</button>
+      </div>
+      <p id="joinErr" class="note" style="color:var(--bad)"></p>
+    </section>
+
+    <!-- מסך משחק -->
+    <section id="playView" class="hidden">
+      <div id="baseRow" class="base-row"></div>
+      <div class="card">
+        <span id="roundTag" class="round-tag"></span>
+        <div id="prompt" class="prompt"></div>
+        <div id="note" class="note"></div>
+
+        <form id="answerForm" class="hidden" style="margin-top:14px;">
+          <div id="answerRows"></div>
+          <div id="sumBar" class="sum-bar">
+            <span id="sumText">סכום: 0 / 100</span>
+            <button id="submitBtn" type="submit" class="btn-ok" disabled>שליחה</button>
+          </div>
+        </form>
+
+        <div id="waitingView" class="hidden big-status">
+          <div id="waitMsg"></div>
+          <div id="waitSub" class="sub"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Firebase SDK (נטען תמיד; נעשה בו שימוש רק אם מולא config) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+
+  <script src="js/config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/figures.js"></script>
+  <script src="js/backend.js"></script>
+  <script src="js/student.js"></script>
+</body>
+</html>

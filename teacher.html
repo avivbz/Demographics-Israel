@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>כפר של 100 — מסך המורה</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="teacher">
+  <div class="wrap">
+    <div class="banner">אם ישראל הייתה כפר של 100 א.נשים</div>
+    <div id="demoFlag" class="demo-flag hidden">מצב הדגמה מקומי — לא מחובר ל-Firebase. הסנכרון עובד רק בין כרטיסיות באותו דפדפן. ראו README להקמת Firebase.</div>
+
+    <!-- הקמת חדר -->
+    <section id="setupView" class="card center">
+      <h2>פתיחת שיעור חדש</h2>
+      <p class="muted">ליצירת חדר עם קוד שהתלמידים יקלידו כדי להצטרף.</p>
+      <div class="btn-row" style="justify-content:center; margin-top:12px;">
+        <button id="createBtn" class="btn-primary">פתיחת חדר</button>
+      </div>
+    </section>
+
+    <!-- קונסולת ניהול -->
+    <section id="consoleView" class="hidden">
+      <div class="card center">
+        <div class="muted">קוד החדר — להקלדה ב-index.html</div>
+        <div id="roomCode" class="room-code"></div>
+        <div id="qr"></div>
+        <div class="join-info">קישור ישיר: <a id="joinLink" href="#" target="_blank" rel="noopener"></a></div>
+      </div>
+
+      <div id="baseRow" class="base-row"></div>
+
+      <div class="card">
+        <div class="center">
+          <span id="roundTag" class="round-tag"></span>
+          <div id="prompt" class="prompt"></div>
+          <div id="note" class="note"></div>
+          <div id="navDots" class="nav-dots"></div>
+        </div>
+
+        <div class="btn-row" style="justify-content:center; margin:12px 0;">
+          <button id="prevBtn">◀ הקודם</button>
+          <span id="count" class="count-pill">0 הגשות</span>
+          <button id="nextBtn">הבא ▶</button>
+          <button id="revealBtn" class="btn-primary">חשוף אמת</button>
+        </div>
+
+        <div class="board-layout">
+          <div id="board"></div>
+          <div id="legend" class="legend"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+  <!-- QR (לא חובה; נפילה חיננית לקישור בלבד אם נחסם) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <script src="js/config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/figures.js"></script>
+  <script src="js/backend.js"></script>
+  <script src="js/teacher.js"></script>
+</body>
+</html>
