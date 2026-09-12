@@ -86,12 +86,12 @@
     }).join('');
     el.defBody.innerHTML =
       '<div class="def-grid">' +
-        '<div class="def-cards">' + cards + '</div>' +
         '<div class="def-box">' +
           '<h3>הגדרה</h3>' +
           '<p class="def-text">' + escapeHtml(d.definition) + '</p>' +
           '<div class="ety"><div class="ety-head">מקור המונח מיוונית:</div>' + ety + '</div>' +
         '</div>' +
+        '<div class="def-cards">' + cards + '</div>' +
       '</div>';
   }
 
