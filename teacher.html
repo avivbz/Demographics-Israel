@@ -13,12 +13,34 @@
     <div class="banner">אם ישראל הייתה כפר של 100 א.נשים</div>
     <div id="demoFlag" class="demo-flag hidden">מצב הדגמה מקומי — לא מחובר ל-Firebase. הסנכרון עובד רק בין כרטיסיות באותו דפדפן. ראו README להקמת Firebase.</div>
 
+    <!-- מסך 1: הגדרת דמוגרפיה -->
+    <section id="defView">
+      <h1 class="screen-title">מהי דמוגרפיה?</h1>
+      <div id="defBody"></div>
+      <div class="btn-row" style="justify-content:flex-start; margin-top:8px;">
+        <button id="toPopBtn" class="btn-primary">הבא ▶</button>
+      </div>
+    </section>
+
+    <!-- מסך 2: כמה אנשים חיים בישראל -->
+    <section id="popView" class="hidden">
+      <h1 class="screen-title">כמה אנשים חיים בישראל?</h1>
+      <div id="popBody" class="card"></div>
+      <div class="btn-row" style="justify-content:space-between; margin-top:8px;">
+        <button id="popBackBtn">◀ הקודם</button>
+        <button id="toSetupBtn" class="btn-primary">הבא ▶</button>
+      </div>
+    </section>
+
     <!-- הקמת חדר -->
-    <section id="setupView" class="card center">
+    <section id="setupView" class="card center hidden">
       <h2>פתיחת שיעור חדש</h2>
       <p class="muted">ליצירת חדר עם קוד שהתלמידים יקלידו כדי להצטרף.</p>
       <div class="btn-row" style="justify-content:center; margin-top:12px;">
         <button id="createBtn" class="btn-primary">פתיחת חדר</button>
+      </div>
+      <div class="btn-row" style="justify-content:center; margin-top:10px;">
+        <button id="setupBackBtn">◀ הקודם</button>
       </div>
     </section>
 

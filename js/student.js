@@ -76,7 +76,7 @@
   function renderQuestion() {
     var q = currentQ();
     if (!q) return;
-    el.baseRow.textContent = BASES[q.base];
+    el.baseRow.innerHTML = window.baseRowHtml(q);
     el.roundTag.textContent = q.round;
     el.prompt.textContent = q.prompt;
     el.note.textContent = q.note || '';
